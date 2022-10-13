@@ -11,6 +11,16 @@ message CreateUserRequest {
     UserRole role = 6;
 }
 
+message BeatsPerMinuteRequest {
+    uint32 user_id = 1;
+}
+
+message BeatsPerMinuteResponse {
+    uint32 user_id = 1;
+    uint32 value = 2;
+    uint32 minute = 3;
+}
+
 message User {
     string name = 1;
     string email = 2;
@@ -37,4 +47,5 @@ enum UserRole {
 service UserService {
     rpc CreateUser(CreateUserRequest) returns (User) {}
     rpc GetUsers(Empty) returns(UserList) {}
+    rpc BeatsPerMinute(BeatsPerMinuteRequest) returns (stream BeatsPerMinuteResponse) {}
 }
