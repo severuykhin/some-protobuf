@@ -16,6 +16,7 @@ message User {
     string email = 2;
     string hash = 3;
     string id = 4;
+    UserRole role = 5;
 }
 
 message UserList {
