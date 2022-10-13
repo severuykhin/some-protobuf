@@ -8,7 +8,7 @@ message CreateUserRequest {
     string name = 1;
     string email = 2;
     uint32 some = 5 [deprecated = true];
-    Role role = 6;
+    UserRole role = 6;
 }
 
 message User {
@@ -26,11 +26,11 @@ message Empty {
 
 }
 
-enum Role {
-    ROLE_UNSPECIFIED = 0;
-    ROLE_ADMIN = 1;
-    ROLE_MODER = 2;
-    ROLE_USER = 3;
+enum UserRole {
+    UNSPECIFIED = 0;
+    ADMIN = 1;
+    MODER = 2;
+    USER = 3;
 }
 
 service UserService {
